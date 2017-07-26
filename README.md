@@ -1,6 +1,6 @@
-# simple-i18n
+# i18n-s
 
-> translate i18n tool
+> A simple tool to translate i18n.
 
 ## use
 
