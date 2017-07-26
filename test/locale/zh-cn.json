@@ -1,0 +1,9 @@
+{
+  "test": "test string",
+  "b.test": "test string b",
+  "a is b's father": "${a} is ${b}'s father",
+
+  "c": {
+    "test": "test string c"
+  }
+}

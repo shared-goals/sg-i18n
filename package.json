@@ -1,0 +1,32 @@
+{
+  "name": "i18n-s",
+  "version": "1.0.0",
+  "description": "simple i18n",
+  "main": "dist/i18n-s.js",
+  "module": "dist/i18n-s.mjs",
+  "scripts": {
+    "build": "rollup -c --environment BUILD:production",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccqgithub/i18n-s.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccqgithub/i18n-s/issues"
+  },
+  "homepage": "https://github.com/ccqgithub/i18n-s#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "babelrc-rollup": "^3.0.0",
+    "mocha": "^3.4.2",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-istanbul": "^1.1.0"
+  }
+}
