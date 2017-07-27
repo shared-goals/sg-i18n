@@ -41,6 +41,14 @@ var I18n = function () {
       this._locale = locale;
     }
 
+    // get the current locale
+
+  }, {
+    key: 'getLocale',
+    value: function getLocale() {
+      return this._locale;
+    }
+
     // translate keys
 
   }, {

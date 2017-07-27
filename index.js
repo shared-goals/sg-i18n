@@ -17,6 +17,11 @@ export default class I18n {
     this._locale = locale;
   }
 
+  // get the current locale
+  getLocale() {
+    return this._locale;
+  }
+
   // translate keys
   translate(key, vars={}) {
     let locale = this._locale;
