@@ -1,6 +1,6 @@
 {
   "name": "i18n-s",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "simple i18n",
   "main": "dist/i18n-s.js",
   "module": "dist/i18n-s.mjs",

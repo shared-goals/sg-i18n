@@ -12,6 +12,12 @@ export default class I18n {
     this._i18nData[locale] = data;
   }
 
+  // get locale data
+  getLocaleData(lc) {
+    let locale = lc || this.getLocale();
+    return this._i18nData[locale] || {};
+  }
+
   // set the current locale
   setLocale(locale) {
     this._locale = locale;
