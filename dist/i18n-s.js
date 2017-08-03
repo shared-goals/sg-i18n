@@ -33,6 +33,15 @@ var I18n = function () {
       this._i18nData[locale] = data;
     }
 
+    // get locale data
+
+  }, {
+    key: 'getLocaleData',
+    value: function getLocaleData(lc) {
+      var locale = lc || this.getLocale();
+      return this._i18nData[locale] || {};
+    }
+
     // set the current locale
 
   }, {
