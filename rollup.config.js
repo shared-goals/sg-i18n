@@ -1,5 +1,4 @@
 import babel from 'rollup-plugin-babel';
-import istanbul from 'rollup-plugin-istanbul';
 
 let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
@@ -8,36 +7,33 @@ let plugins = [
   babel({
     "babelrc": false,
     "presets": [
-      ["env", {
-        "targets": {
-          "browsers": ["> 1%", "not ie <= 8"]
-        },
+      ["@babel/preset-env", {
         "modules": false
       }],
-      "stage-3"
-    ],
-    "plugins": [
-
     ]
   })
 ];
 
-if (process.env.BUILD !== 'production') {
-  plugins.push(istanbul({
-    exclude: ['test/**/*', 'node_modules/**/*']
-  }));
-}
-
 export default {
-  entry: 'index.js',
+  input: 'index.js',
   plugins: plugins,
   external: external,
-  targets: [
+  output: [
     {
-      dest: pkg.main,
       format: 'umd',
-      moduleName: 'i18n-s',
-      sourceMap: true
+      name: 'I18nS',
+      file: 'dist/i18n-s.umd.js',
+      sourcemap: true
+    },
+    {
+      format: 'cjs',
+      file: 'dist/i18n-s.common.js',
+      sourcemap: true
+    },
+    {
+      format: 'esm',
+      file: 'dist/i18n-s.esm.js',
+      sourcemap: true
     }
   ]
 };

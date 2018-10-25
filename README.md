@@ -5,11 +5,13 @@
 ## use
 
 install
+
 ```sh
 npm install i18n-s -S
 ```
 
 use
+
 ```js
 import I18n from 'i18n-s';
 
@@ -24,7 +26,12 @@ let localeData = {
   }
 }
 
-let i18n = new I18n();
+let i18n = new I18n({
+  locale: 'zh-CN', // init locale
+  i18nData: {}, // init data,
+  log: process.env.NODE_ENV !== 'production', // is log when no translate
+  // log: function(msg) { console.log(msg) }, // log can be a function
+});
 
 // set current locale and locale data
 i18n.setLocaleData(locale, i18nData);

@@ -1,5 +1,5 @@
 var assert = require('assert');
-var I18n = require('../dist/i18n-s');
+var I18n = require('../dist/i18n-s.common');
 var i18nData = require('./locale/zh-cn.json');
 
 var locale = 'zh-cn';

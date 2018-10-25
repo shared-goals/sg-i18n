@@ -1,10 +1,30 @@
-import {regExpEscape} from './lib/util';
+import { regExpEscape } from './lib/util';
 
 export default class I18n {
 
-  constructor(locale, i18nData) {
-    this._locale = locale || 'zh';
-    this._i18nData = i18nData || {};
+  constructor(opts = {}) {
+    let { 
+      locale = 'zh-CN', 
+      i18nData = {},
+      log = (process.env.NODE_ENV !== 'production'),
+    } = opts;
+
+    // data
+    this._locale = locale;
+    this._i18nData = i18nData;
+    this._log = log;
+  }
+
+  // log
+  log(msg) {
+    // no log
+    if (!this._log) return;
+    // log msg
+    if (typeof this._log === 'function') {
+      this._log(msg);
+    } else if (console && console.log) {
+      console.log(msg);
+    }
   }
 
   // set locale data of one locale
@@ -40,9 +60,7 @@ export default class I18n {
     }
 
     if (!val) {
-      if (process.env.NODE_ENV !== 'production') {
-        console.log(`Translate lost: [${locale}] => [${key}]`);
-      }
+      this.log(`Translate lost: [${locale}] => [${key}]`);
       return val;
     }
 
