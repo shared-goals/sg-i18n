@@ -53,7 +53,7 @@ export default class I18n {
     let locale = this._locale;
     let data = this._i18nData[locale] || {};
     let val = data[key];
-    let arr = key.split('.', 2);
+    let arr = key.replace(/\./, '/').split('/', 2)
 
     if (!val && arr.length > 1) {
       val = this.findDotTranslate(arr[1], data[arr[0]]);
@@ -75,7 +75,7 @@ export default class I18n {
     if (typeof data !== 'object') return null;
 
     let val = data[key];
-    let arr = key.split('.', 2);
+    let arr = key.replace(/\./, '/').split('/', 2)
 
     if (val) return val;
 
