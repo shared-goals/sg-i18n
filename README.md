@@ -1,4 +1,4 @@
-# i18n-s
+# sg-i18n
 
 > A simple tool to translate i18n.
 
@@ -7,13 +7,13 @@
 install
 
 ```sh
-npm install i18n-s -S
+npm install sg-i18n -S
 ```
 
 use
 
 ```js
-import I18n from 'i18n-s';
+import I18n from 'sg-i18n';
 
 let locale = 'zh-cn';
 let localeData = {

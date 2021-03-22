@@ -1,6 +1,6 @@
 {
   "name": "sg-i18n",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Fork of https://github.com/ccqgithub/i18n-s",
   "main": "dist/i18n-s.common.js",
   "module": "dist/i18n-s.esm.js",
